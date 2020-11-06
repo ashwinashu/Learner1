@@ -2,11 +2,11 @@ const { startConnection } = require("../../helpers/databaseConnection");
 let connection = startConnection();
 
 class CmsContent {
-  static addMaster(tableName, value) {
+  static show() {
     return new Promise((resolve, reject) => {
       connection.query(
-        `insert into ${tableName} set ?`,
-        [value],
+        `selct * from append`,
+        
         (err, rows) => {
           if (err) return reject(err);
           resolve(rows);
@@ -16,12 +16,11 @@ class CmsContent {
   }
 
   static addcontent(name,men,women,total,duration,sdate,edate,men_sal,women_sal,men_sal_e,women_sal_e,total_sal) {
-    console.log(
-      `select ${selection} from ${tableName} where ${condition} group by ${groupby} order by ${orderby}`
-    );
+  
     return new Promise((resolve, reject) => {
       connection.query(
-        `select ${selection} from ${tableName} where ${condition} group by ${groupby} order by ${orderby}`,
+        `insert into append values ?,?,?,?,?,?,?,?,?,?,?,?`,
+        [name,men,women,total,duration,sdate,edate,men_sal,women_sal,men_sal_e,women_sal_e,total_sal],
         (err, rows) => {
           if (err) return reject(err);
           resolve(rows);
