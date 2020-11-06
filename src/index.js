@@ -10,7 +10,7 @@ const db = mysql.createPool({
 })
 
 app.get("/",(req,res)=>{
-  const squery = "INSERT INTO append (name) values ("Arun");"
+  const squery = "INSERT INTO append (name) VALUES ('Arun');"
   db.query(squery , (err,result)=>{
     res.send("Running ");
   })
