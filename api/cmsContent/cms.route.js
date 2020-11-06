@@ -1,10 +1,11 @@
 const rconst router = require("express").Router();
 const cmsContent = require("./cms.controller");
+
 const config = require("../../config");
 
-rounter.route("/").get(cmsContent.testing);
+rounter.route("/").get(cmsContent.addcontent);
 router
   .route("/")
-  .put(cmsContent.addcontent);
+  .put(cmsContent.show);
 
 module.exports = router;
