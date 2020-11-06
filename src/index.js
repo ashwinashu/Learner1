@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql");
 
 const db = mysql.createPool({
-  host: ;'localhost',
+  host: 'localhost',
   database: 'learner1',
   user: 'learner1',
   password: 'learner@123'
