@@ -1,29 +1,10 @@
-var express = require ('express');
-var mysql = require('mysql')
-var app = express();
+const chalk = require("chalk");
+const { PORT, HOST } = require("./config");
+const app = require("./app");
 
+const http = require("http");
+const server = http.Server(app);
 
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'dbuser',
-  password: '',
-  database: 'my_db'
-})
-
-connection.connect()
-
-connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
-  if (err) throw err
-
-  console.log('The solution is: ', rows[0].solution)
-})
-
-connection.end()
-
-app.get('/' , (req,res)=>{
-  res.send('Hello World');
-});
-
-app.listen(3000,()=>{
-  console.log('running i port 3000');
-});
+server.listen(PORT, HOST, () =>
+  console.log(chalk.bold(`Server started @ http://${HOST}:${PORT}/`))
+);
