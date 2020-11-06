@@ -11,10 +11,13 @@ const db = mysql.createConnection({
 
 db.connect()
 
-db.query('SELECT 1 + 1 AS solution', (error, results, fields) => {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
+
+db.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
+  if (err) throw err
+
+  console.log('The solution is: ', rows[0].solution)
+})
+
 
 
 app.get("/",(req,res)=>{
