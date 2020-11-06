@@ -5,6 +5,6 @@ const config = require("../../config");
 rounter.route("/").get(cmsContent.testing);
 router
   .route("/")
-  .put(cmsContent.getcontent);
+  .put(cmsContent.addcontent);
 
 module.exports = router;
