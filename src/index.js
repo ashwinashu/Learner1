@@ -23,6 +23,6 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.listen(6000,()=>{
+app.listen(4000,()=>{
   console.log("Running in 6000");
 })
