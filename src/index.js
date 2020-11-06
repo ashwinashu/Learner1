@@ -13,9 +13,9 @@ db.connect()
 
 
 db.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
-  if (err) throw err
+  if (err) throw err;
 
-  console.log('The solution is: ', rows[0].solution)
+  console.log('The solution is: ', rows[0].solution);
 })
 
 
@@ -27,6 +27,6 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.listen(3011,()=>{
+app.listen(3012,()=>{
   console.log("Running in 3006");
 })
