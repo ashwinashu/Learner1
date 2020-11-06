@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const { PORT, HOST } = require("./config");
+const { PORT, HOST } = require("./db");
 const app = require("./app");
 
 const http = require("http");
