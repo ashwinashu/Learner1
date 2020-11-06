@@ -3,9 +3,9 @@ const cmsContent = require("./cms.controller");
 
 const config = require("../../config");
 
-rounter.route("/").get(cmsContent.addcontent);
+rounter.route("/").get(cmsContent.show);
 router
   .route("/")
-  .put(cmsContent.show);
+  .put(cmsContent.addcontent);
 
 module.exports = router;
