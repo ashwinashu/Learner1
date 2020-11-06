@@ -9,6 +9,14 @@ const db = mysql.createPool({
   password: "learner@123",
 })
 
+db.connect();
+
+db.query('SELECT 1 + 1 AS solution', (error, results, fields) => {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+
+
 app.get("/",(req,res)=>{
   const squery = "INSERT INTO append (name) VALUES ('Arun');"
   db.query(squery , (err,result)=>{
@@ -16,6 +24,6 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.listen(3004,()=>{
+app.listen(3005,()=>{
   console.log("Running in 3000");
 })
