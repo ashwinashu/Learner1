@@ -3,10 +3,10 @@ const app = express();
 const mysql = require("mysql");
 
 const db = mysql.createPool({
-  host: "localhost",
-  database: "learner1",
-  user: "learner1",
-  password: "learner@123"
+  host: ;'localhost',
+  database: 'learner1',
+  user: 'learner1',
+  password: 'learner@123'
 })
 
 
@@ -23,6 +23,6 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.listen(3012,()=>{
-  console.log("Running in 3006");
+app.listen(6000,()=>{
+  console.log("Running in 6000");
 })
