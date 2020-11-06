@@ -19,3 +19,11 @@ connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
 })
 
 connection.end()
+
+app.get('/' , (req,res)=>{
+  res.send('Hello World');
+});
+
+app.listen(3000,()=>{
+  console.log('running i port 3000');
+});
