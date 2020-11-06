@@ -9,7 +9,7 @@ const db = mysql.createPool({
   password: "learner@123",
 })
 
-db.connect();
+db.connect()
 
 db.query('SELECT 1 + 1 AS solution', (error, results, fields) => {
   if (error) throw error;
