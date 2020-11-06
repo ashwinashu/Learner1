@@ -7,7 +7,7 @@ const {
   DB_USERNAME,
   DB_PASSWORD,
   DB_TIMEZONE
-} = require("../config");
+} = require("../db");
 
 let db_config = {
   // connectionLimit: 200,
