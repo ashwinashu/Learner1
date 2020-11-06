@@ -6,5 +6,5 @@ const config = require("../../config");
 
 module.exports = {
   testing,
-  getcontent
+  addcontent
 };
