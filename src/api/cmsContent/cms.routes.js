@@ -1,4 +1,4 @@
-const rconst router = require("express").Router();
+const const router = require("express").Router();
 const cmsContent = require("./cms.controller");
 
 const db = require("../../db");
