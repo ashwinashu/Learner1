@@ -3,10 +3,10 @@ const app = express();
 const mysql = require("mysql");
 
 const db = mysql.createPool({
-  host: localhost,
-  database: learner1,
-  user: learner1,
-  password: learner@123,
+  host: "localhost",
+  database: "learner1",
+  user: "learner1",
+  password: "learner@123",
 })
 
 app.get("/",(req,res)=>{
