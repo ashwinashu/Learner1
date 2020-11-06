@@ -27,6 +27,6 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.listen(3006,()=>{
+app.listen(3008,()=>{
   console.log("Running in 3006");
 })
