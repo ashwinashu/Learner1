@@ -3,7 +3,7 @@ const cmsContent = require("./cms.controller");
 
 const db = require("../../db");
 
-rounter.route("/").get(cmsContent.show);
+router.route("/").get(cmsContent.show);
 router
   .route("/")
   .put(cmsContent.addcontent);
