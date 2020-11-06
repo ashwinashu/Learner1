@@ -1,10 +1,6 @@
-const chalk = require("chalk");
-const { PORT, HOST } = require("./db");
-const app = require("./app");
+const express = require("express");
+const app = express();
 
-const http = require("http");
-const server = http.Server(app);
-
-server.listen(PORT, HOST, () =>
-  console.log(chalk.bold(`Server started @ http://${HOST}:${PORT}/`))
-);
+app.listen(3001,()=>{
+  console.log("Running in 3001");
+})
