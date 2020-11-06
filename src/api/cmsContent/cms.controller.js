@@ -59,6 +59,5 @@ const addcontent = async (req, res, next) => {
 };
 
 module.exports = {
-  testing,
-  addcontent
+   addcontent
 };
