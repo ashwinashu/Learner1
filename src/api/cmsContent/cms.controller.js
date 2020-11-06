@@ -18,7 +18,7 @@ const addcontent = async (req, res, next) => {
           body.men,
           body.women,
           body.total,
-          body.duration,body.
+          body.duration,
           body.sdate,
           body.edate,
           body.men_sal,
