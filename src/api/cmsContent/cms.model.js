@@ -2,6 +2,32 @@ const { startConnection } = require("../../helpers/databaseConnection");
 let connection = startConnection();
 
 class CmsContent {
+  static addMaster(tableName, value) {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `insert into ${tableName} set ?`,
+        [value],
+        (err, rows) => {
+          if (err) return reject(err);
+          resolve(rows);
+        }
+      );
+    });
+  }
+
+  static updateMaster(tableName, id, value, column = "id") {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `update ${tableName} set ? where ${column} = ?`,
+        [value, id],
+        (err, rows) => {
+          if (err) return reject(err);
+          resolve(rows);
+        }
+      );
+    });
+  }
+  
   static show() {
     return new Promise((resolve, reject) => {
       connection.query(
