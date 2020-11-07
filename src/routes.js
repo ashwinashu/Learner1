@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', (req, res) => {
   res.statusCode = 302;
-  res.setHeader('Location', 'https://difuza.com/');
+  res.setHeader('Location', 'http://exp.rem.coach/');
   res.end();
 });
 
