@@ -15,14 +15,3 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-
-app.get("/",(req,res)=>{
-  const squery = "INSERT INTO append (name) VALUES ('Arun');"
-  db.query(squery , (err,result)=>{
-    res.send("Running ");
-  })
-})
-
-app.listen(4000,()=>{
-  console.log("Running in 6000");
-})
