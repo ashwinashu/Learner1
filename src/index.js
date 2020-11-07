@@ -26,14 +26,15 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-const qq = 'select * from append';
-
-db.query(qq, function(error,results,fields){
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-})
-
-
+db.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "select * from append";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
 // app.get("/show",(req,res)=>{
 //  console.log("calling");
 //   const query1 = "select * from append";
