@@ -15,7 +15,7 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-const q = 'INSERT INTO append VALUES ('added');'
+const q = 'INSERT INTO append (name) VALUES ('added');'
 db.query('q', function (error,results,fields){
   if (error) throw error;
   console.log('The solution is: ', results[0].append);
