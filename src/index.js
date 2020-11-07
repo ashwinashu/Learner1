@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
-console.log(app);
+//console.log(app);
+const bodyParser = require("body-parser");
 const mysql = require("mysql");
+const cors = require("cors");
+
 
 const db = mysql.createPool({
   host: 'localhost',
@@ -11,16 +14,40 @@ const db = mysql.createPool({
 });
 
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app,use(express.json());
+app.use(cors());
+
+
+
 db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
   console.log('The solution is: ', results[0].solution);
 });
 
-//app.post("/submit",(req,res)=>{
- // console.log("calling");
-//});
+
+app.get("/show",(req,res)=>{
+ console.log("calling");
+  const query1 = "select * from append "?";
+  db.query(query1,(err,result)=>{
+  res.send(result);
+  console.log(result);
+});
 
 
-app.listen(15501,() => {
-  console.log("RUnning in 3000");
+app.post("/submit",(req,res)=>{
+  const name = req.body.name;
+  
+ console.log("calling");
+  const query1 = "insert into append values "?";
+  db.query(query1,[name],(err,result)=>{
+  console.log(result);
+  })
+        
+});
+
+
+app.listen(4000,() => {
+  console.log("RUnning in 4000");
 });
