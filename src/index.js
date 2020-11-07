@@ -27,22 +27,13 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 });
 
 
-var sql = "insert into append values ('arun1')";
-
-db.query(sql , (err, results, fields) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  // get inserted id
-  console.log('Todo Id:' + results.insertId);
-});
 
 
 app.post('/submit', function(req, res) {
   // Get sent data.
   var user = req.body;
   // Do a MySQL query.
-  var query = connection.query('INSERT INTO users SET ?', user, function(err, result) {
+  var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
     // Neat!
   });
   res.end('Success');
