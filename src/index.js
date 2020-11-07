@@ -38,6 +38,18 @@ db.query(sql , (err, results, fields) => {
 });
 
 
+app.post('/submit', function(req, res) {
+  // Get sent data.
+  var user = req.body;
+  // Do a MySQL query.
+  var query = connection.query('INSERT INTO users SET ?', user, function(err, result) {
+    // Neat!
+  });
+  res.end('Success');
+});
+
+
+
 // app.get("/show",(req,res)=>{
 //  console.log("calling");
 //   const query1 = "select * from append";
