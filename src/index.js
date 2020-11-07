@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const cors = require("cors");
 var nodemailer = require('nodemailer');
-const creds = require('./config');
+//const creds = require('./config');
+const mail = require('./mail');
 
 
 const db = mysql.createPool({
