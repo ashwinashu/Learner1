@@ -27,6 +27,11 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 });
 
 
+db.query('select * from append', function(error,results,fields){
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+})
+
 // app.get("/show",(req,res)=>{
 //  console.log("calling");
 //   const query1 = "select * from append";
@@ -36,16 +41,16 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 // });
 
 
-app.post("/submit",(req,res)=>{
-  const name = req.body.name;
+// app.post("/submit",(req,res)=>{
+//   const name = req.body.name;
   
- console.log("calling");
-  const query1 = "insert into append values (?)";
-  db.query(query1,[name],(err,result)=>{
-  console.log(result);
-  })
+//  console.log("calling");
+//   const query1 = "insert into append values (?)";
+//   db.query(query1,[name],(err,result)=>{
+//   console.log(result);
+//   })
         
-});
+// });
 
 
 // app.listen(4000,() => {
