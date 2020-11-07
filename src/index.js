@@ -26,15 +26,18 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-db.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  var sql = "select * from append";
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log(result);
-  });
+
+var sql = "insert into append values ('arun1')";
+
+db.query(sql , (err, results, fields) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  // get inserted id
+  console.log('Todo Id:' + results.insertId);
 });
+
+
 // app.get("/show",(req,res)=>{
 //  console.log("calling");
 //   const query1 = "select * from append";
