@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+console.log(app);
 const mysql = require("mysql");
 
 const db = mysql.createPool({
@@ -20,6 +21,6 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 //});
 
 
-app.listen(15500,() => {
-  console.log("RUnning in 3000");
-});
+//app.listen(15500,() => {
+  //console.log("RUnning in 3000");
+//});
