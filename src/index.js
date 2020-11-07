@@ -26,11 +26,13 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
+const qq = 'select * from append';
 
-db.query('select * from append', function(error,results,fields){
+db.query(qq, function(error,results,fields){
   if (error) throw error;
   console.log('The solution is: ', results[0].solution);
 })
+
 
 // app.get("/show",(req,res)=>{
 //  console.log("calling");
