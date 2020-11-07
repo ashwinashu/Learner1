@@ -36,18 +36,18 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 // });
 
 
-// app.post("/submit",(req,res)=>{
-//   const name = req.body.name;
+app.post("/submit",(req,res)=>{
+  const name = req.body.name;
   
-//  console.log("calling");
-//   const query1 = "insert into append values (?)";
-//   db.query(query1,[name],(err,result)=>{
-//   console.log(result);
-//   })
+ console.log("calling");
+  const query1 = "insert into append values (?)";
+  db.query(query1,[name],(err,result)=>{
+  console.log(result);
+  })
         
-// });
-
-
-app.listen(4000,() => {
-  console.log("RUnning in 4000");
 });
+
+
+// app.listen(4000,() => {
+//   console.log("RUnning in 4000");
+// });
