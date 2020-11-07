@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const cors = require("cors");
+var nodemailer = require('nodemailer');
+const creds = require('./config');
 
 
 const db = mysql.createPool({
@@ -28,40 +30,27 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 
 
 
-
-app.post('/submit', function(req, res) {
-  // Get sent data.
-  var user = req.body;
-  // Do a MySQL query.
-  var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
-    // Neat!
-  });
-  res.end('Success');
+app.get("/show",(req,res)=>{
+ console.log("calling");
+  const query1 = "select * from append";
+  db.query(query1,(err,result)=>{
+  res.send(result);
+  console.log(result);
 });
 
 
-
-// app.get("/show",(req,res)=>{
-//  console.log("calling");
-//   const query1 = "select * from append";
-//   db.query(query1,(err,result)=>{
-//   res.send(result);
-//   console.log(result);
-// });
-
-
-// app.post("/submit",(req,res)=>{
-//   const name = req.body.name;
+app.post("/submit",(req,res)=>{
+  const name = req.body.name;
   
-//  console.log("calling");
-//   const query1 = "insert into append values (?)";
-//   db.query(query1,[name],(err,result)=>{
-//   console.log(result);
-//   })
+ console.log("calling");
+  const query1 = "insert into append values (?)";
+  db.query(query1,[name],(err,result)=>{
+  console.log(result);
+  })
         
-// });
+});
 
 
-// app.listen(4000,() => {
-//   console.log("RUnning in 4000");
-// });
+app.listen(4000,() => {
+  console.log("RUnning in 4000");
+});
