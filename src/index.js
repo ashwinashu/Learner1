@@ -48,6 +48,6 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 // });
 
 
-// app.listen(4000,() => {
-//   console.log("RUnning in 4000");
-// });
+app.listen(4000,() => {
+  console.log("RUnning in 4000");
+});
