@@ -15,9 +15,9 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-app.post("/submit",(req,res)=>{
-  console.log("calling");
-});
+//app.post("/submit",(req,res)=>{
+ // console.log("calling");
+//});
 
 
 app.listen(15500,() => {
