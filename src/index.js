@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 //console.log(app);
@@ -32,13 +31,13 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 
 
 
-// app.get("/show",(req,res)=>{
-//  console.log("calling");
-//   const query1 = "select * from append";
-//   db.query(query1,(err,result)=>{
-//   res.send(result);
-//   console.log(result);
-// });
+app.get("/show",(req,res)=>{
+ console.log("calling");
+  const query1 = "select * from append";
+  db.query(query1,(err,result)=>{
+  res.send(result);
+  console.log(result);
+});
 
 
 app.post("http://exp.rem.coach/submit",(req,res)=>{
@@ -53,7 +52,7 @@ app.post("http://exp.rem.coach/submit",(req,res)=>{
 });
 
 
-//app.listen(15550,() => {
-  //console.log("RUnning in 4000");
-//});
+// app.listen(4000,() => {
+//   console.log("RUnning in 4000");
+// });
 
