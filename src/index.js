@@ -10,7 +10,7 @@ var nodemailer = require('nodemailer');
 
 
 const db = mysql.createPool({
-  host: 'localhost',
+  host: 'http://exp.rem.coach/',
   database: 'learner1',
   user: 'learner1',
   password: 'learner@123'
