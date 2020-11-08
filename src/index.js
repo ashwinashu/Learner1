@@ -37,7 +37,8 @@ app.get("/show",(req,res)=>{
   db.query(query1,(err,result)=>{
   res.send(result);
   console.log(result);
-});
+})
+  });
 
 
 app.post("http://exp.rem.coach/submit",(req,res)=>{
