@@ -23,6 +23,9 @@ const db = mysql.createPool({
 
 db.getConnection(function(err, connection) {
   // connected! (unless `err` is set)
+  console.log("calling");
+  console.log(err);
+  console.log(connection);
 });
 
 const router = Router();
