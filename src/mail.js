@@ -8,6 +8,8 @@ var transporter = nodemailer.createTransport({
   }
 });
 
+
+
 var mailOptions = {
   from: 'youremail@gmail.com',
   to: 'myfriend@yahoo.com',
@@ -23,3 +25,5 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 });
+
+module.exports = transporter ;
