@@ -9,9 +9,6 @@ var nodemailer = require('nodemailer');
 //const mail = require('./mail');
 const pdf = require('html-pdf');
 const pdfTemplate = require('./documents');
-const chalk = require("chalk");
-//const http = require("http");
-//const { Router } = require('express');
 
 
 const db = mysql.createPool({
@@ -22,21 +19,10 @@ const db = mysql.createPool({
 });
 
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // app.use(express.json());
 app.use(cors());
-
-
-app.get("/show1",(req,res)=>{
- console.log("calling");
-  const query1 = "select * from append";
-  db.query(query1,(err,result)=>{
-  res.send(result);
-  console.log(result);
-   })
-  });
 
 
 
@@ -123,8 +109,8 @@ app.get('/fetch-pdf', (req, res) => {
 })
 
 
-//app.listen(25254,() => {
-  //console.log("RUnning in 25253");
-//});
+// app.listen(4000,() => {
+//   console.log("RUnning in 4000");
+// });
 
 db.end();
