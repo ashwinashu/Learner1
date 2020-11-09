@@ -36,7 +36,8 @@ db.query(function(err) {
     } else {
       console.log("MYSQL connected as id : " + db.threadId);
       console.log("status : " + db.state);
-    });
+    }
+});
 
 app.get("/show",(req,res)=>{
  console.log("calling");
