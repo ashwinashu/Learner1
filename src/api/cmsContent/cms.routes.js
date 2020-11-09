@@ -46,17 +46,17 @@ const corsOptionsDelegate = (req, res, next) => {
 //   }
 // };
 
-// router
-//   .route("/master/:tableName/:id?/:order?")
-//   .post(corsOptionsDelegate, cmsContent.addMaster)
+router
+   .route("/addcontent")
+   .post(corsOptionsDelegate, cmsContent.addMaster)
 //   // .get(corsOptionsDelegate, cmsContent.getMasterValues)
 //   .put(corsOptionsDelegate, cmsContent.updateMaster)
 //   .delete(corsOptionsDelegate, cmsContent.deleteMaster);
 
 router.route("/sandbox/test").get(cmsContent.sandboxtest);
 
-router
-  .route("/getFullFreedom/getFreedom/:tableName?")
-  .put(cmsContent.getFreedom);
+//router
+  //.route("/getFullFreedom/getFreedom/:tableName?")
+  //.put(cmsContent.getFreedom);
 
 module.exports = router;
