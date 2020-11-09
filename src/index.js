@@ -30,6 +30,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+app.get("/show1",(req,res)=>{
+ console.log("calling");
+  const query1 = "select * from append";
+  db.query(query1,(err,result)=>{
+  res.send(result);
+  console.log(result);
+   })
+  });
+
+
 
 db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
