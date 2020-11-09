@@ -61,9 +61,7 @@ transporter.sendMail(mailOptions, function(error, info){
       res.sendFile(`${__dirname}/result.pdf`)
     })
 
-        
-      );
-    });
+         });
   }
 
   
@@ -80,7 +78,7 @@ transporter.sendMail(mailOptions, function(error, info){
         }
       );
     });
-  }
 }
+
 
 module.exports = CmsContent;
