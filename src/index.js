@@ -22,16 +22,6 @@ const db = mysql.createPool({
 });
 
 
-const router = Router();
-
-router.get('/', (req, res) => {
-  res.statusCode = 302;
-  res.setHeader('Location', 'http://exp.rem.coach/ak');
-  res.end();
-});
-
-
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
