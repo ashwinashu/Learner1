@@ -29,32 +29,20 @@ const sandboxtest = async (req, res, next) => {
 
 const getFreedom = async (req, res, next) => {
   let body = req.body.value ? req.body.value : req.body;
-  let device = req.body.device;
+ // let device = req.body.device;
 
   try {
     var result = [];
-    if (device && device.id) {
+    
       let check = await comparingObj(req);
       if (check) {
-        result = await CmsContent.getFreedom(
-          body.select,
-          body.tableName,
-          body.condition,
-          body.groupby,
-          body.orderby
+        result = await CmsContent.addMaster(
+          body.name          
         );
       } else {
         result = false;
       }
-    } else {
-      result = await CmsContent.getFreedom(
-        body.select,
-        body.tableName,
-        body.condition,
-        body.groupby,
-        body.orderby
-      );
-    }
+    
     //db end connection
     endConnection();
     res.send(result);
