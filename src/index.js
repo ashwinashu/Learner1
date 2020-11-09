@@ -21,7 +21,7 @@ const db = mysql.createPool({
 const http = require("http");
 const server = http.Server(app);
 
-server.listen(5000, localhost, () =>
+server.listen(5000, 'localhost', () =>
   console.log(chalk.blue(`Server started @ http://${HOST}:${PORT}/`))
 );
 
