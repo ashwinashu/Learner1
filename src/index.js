@@ -21,8 +21,8 @@ const db = mysql.createPool({
   password: 'learner@123'
 });
 
-db.connect(function(err) {
-    if (err) throw err;
+db.getConnection(function(err, connection) {
+  // connected! (unless `err` is set)
 });
 
 const router = Router();
