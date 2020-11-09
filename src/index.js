@@ -4,13 +4,13 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const cors = require("cors");
-var nodemailer = require('nodemailer');
+//var nodemailer = require('nodemailer');
 //const creds = require('./config');
 //const mail = require('./mail');
 
 
 const db = mysql.createPool({
-  host: 'http://exp.rem.coach/',
+  host: 'localhost',
   database: 'learner1',
   user: 'learner1',
   password: 'learner@123'
@@ -41,7 +41,7 @@ app.get("/show",(req,res)=>{
   });
 
 
-app.post("http://exp.rem.coach/submit",(req,res)=>{
+app.post("/submit",(req,res)=>{
   const name = req.body.name;
   
  console.log("calling");
