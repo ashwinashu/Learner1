@@ -45,6 +45,13 @@ app.get("/show",(req,res)=>{
   db.query(query1,(err,result)=>{
   res.send(result);
   console.log(result);
+    if (err) {
+      //console.error('error connecting MYSQL : ' + err.stack);
+      console.error("fullError : " + err);
+    } else {
+      console.log("MYSQL connected as id : " + db.threadId);
+      console.log("status : " + db.state);
+    }
 })
   });
 
