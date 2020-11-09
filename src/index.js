@@ -29,7 +29,14 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-
+db.query(function(err) {
+    if (err) {
+      //console.error('error connecting MYSQL : ' + err.stack);
+      console.error("fullError : " + err);
+    } else {
+      console.log("MYSQL connected as id : " + db.threadId);
+      console.log("status : " + db.state);
+    });
 
 app.get("/show",(req,res)=>{
  console.log("calling");
