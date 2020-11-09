@@ -21,7 +21,7 @@ const db = mysql.createPool({
   password: 'learner@123'
 });
 
-
+db.connect();
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -133,8 +133,8 @@ app.get('/fetch-pdf', (req, res) => {
 })
 
 
-app.listen(25254,() => {
-  console.log("RUnning in 25253");
-});
+//app.listen(25254,() => {
+  //console.log("RUnning in 25253");
+//});
 
 db.end();
