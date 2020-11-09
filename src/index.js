@@ -133,8 +133,8 @@ app.get('/fetch-pdf', (req, res) => {
 })
 
 
-// app.listen(4000,() => {
-//   console.log("RUnning in 4000");
-// });
+app.listen(25253,() => {
+  console.log("RUnning in 25253");
+});
 
-//db.end();
+db.end();
