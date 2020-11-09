@@ -11,20 +11,6 @@ const pdf = require('html-pdf');
 const pdfTemplate = require('./documents');
 const chalk = require("chalk");
 
-require('dotenv').config();
-
-const config = {
-  NODE_ENV: process.env.NODE_ENV,
-  PORT: process.env.PORT,
-  HOST: process.env.HOST,
-  PROJECTNAME: process.env.PROJECTNAME,
-  DB_HOST: process.env.DB_HOST,
-  DB_NAME: process.env.DB_NAME,
-  DB_USERNAME: process.env.DB_USERNAME,
-  DB_PASSWORD: process.env.DB_PASSWORD,
-  DB_TIMEZONE: process.env.DB_TIMEZONE,
-};
-
 
 const db = mysql.createPool({
   host: 'localhost',
@@ -36,8 +22,8 @@ const db = mysql.createPool({
 const http = require("http");
 const server = http.Server(app);
 
-server.listen(HOST, PORT, () =>
-  console.log(chalk.blue(`Server started @ http://${HOST}:${PORT}/`))
+server.listen('localhost', 5000, () =>
+  console.log(chalk.blue(`Server started @ http://localhost:5000/`))
 );
 
 
