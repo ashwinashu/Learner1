@@ -9,7 +9,7 @@ var nodemailer = require('nodemailer');
 //const mail = require('./mail');
 const pdf = require('html-pdf');
 const pdfTemplate = require('./documents');
-
+const chalk = require("chalk");
 
 const db = mysql.createPool({
   host: 'localhost',
@@ -17,6 +17,13 @@ const db = mysql.createPool({
   user: 'learner1',
   password: 'learner@123'
 });
+
+const http = require("http");
+const server = http.Server(app);
+
+server.listen(5000, localhost, () =>
+  console.log(chalk.blue(`Server started @ http://${HOST}:${PORT}/`))
+);
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
