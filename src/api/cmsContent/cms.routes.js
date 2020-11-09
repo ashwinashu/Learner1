@@ -48,7 +48,7 @@ const corsOptionsDelegate = (req, res, next) => {
 
 router
    .route("/addcontent")
-   .post(corsOptionsDelegate, cmsContent.addMaster)
+   .post(corsOptionsDelegate, cmsContent.addMaster);
 //   // .get(corsOptionsDelegate, cmsContent.getMasterValues)
 //   .put(corsOptionsDelegate, cmsContent.updateMaster)
 //   .delete(corsOptionsDelegate, cmsContent.deleteMaster);
