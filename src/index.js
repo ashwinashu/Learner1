@@ -41,7 +41,7 @@ db.query(function(err) {
     }
 });
 
-app.get("/show",(req,res)=>{
+app.get("/showtask1",(req,res)=>{
  console.log("calling");
   const query1 = "select * from append";
   db.query(query1,(err,result)=>{
@@ -51,7 +51,7 @@ app.get("/show",(req,res)=>{
   });
 
 
-app.post("/submit",(req,res)=>{
+app.post("/submittask1",(req,res)=>{
   const name = req.body.name;
   
  console.log("calling");
@@ -93,20 +93,6 @@ transporter.sendMail(mailOptions, function(error, info){
         
 });
 
-app.post('/create-pdf', (req, res) => {
-    pdf.create(pdfTemplate(req.body), {}).toFile('result.pdf', (err) => {
-        if(err) {
-            res.send(Promise.reject());
-        }
-
-        res.send(Promise.resolve());
-    });
-});
-
-
-app.get('/fetch-pdf', (req, res) => {
-    res.sendFile(`${__dirname}/result.pdf`)
-})
 
 
 // app.listen(4000,() => {
