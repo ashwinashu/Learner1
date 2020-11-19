@@ -9,7 +9,7 @@ var nodemailer = require('nodemailer');
 //const mail = require('./mail');
 const pdf = require('html-pdf');
 const pdfTemplate = require('./documents');
-
+const main = require('./main'):
 
 const db = mysql.createPool({
   host: 'localhost',
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // app.use(express.json());
 app.use(cors());
-
+app.use(main);
 
 
 db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
