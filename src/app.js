@@ -4,7 +4,7 @@ const cors = require("cors");
 const mysql = require("mysql");
 const fileUpload = require('express-fileupload');
 var fs = require("fs");
-
+var path = require('path');
 const app = express();
 // Initialize server
 
@@ -48,18 +48,6 @@ db.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
     if (error) throw error;
     console.log('The solution is: ', results[0].solution);
   });
-
-db.query(function(err) {
-    if (err) {
-      //console.error('error connecting MYSQL : ' + err.stack);
-      console.error("fullError : " + err);
-    } else {
-      console.log("MYSQL connected as id : " + connection.threadId);
-      console.log("status : " + connection.state);
-    }
-  });
-
-
 
 app.get('/show1',(req,res)=>{
     console.log("calling show");
@@ -124,7 +112,11 @@ app.post("/submit",(req,res)=>{
     
     // res.send("success");       
   });
-
+app.post('/download', (req, res) => {
+  // const file = req.body.file1
+  // console.log(file)
+  res.download('./src/public/1.jpg');
+})
 
 app.post('/upload', (req, res) => {
 
@@ -146,7 +138,8 @@ app.post('/upload', (req, res) => {
             return res.status(500).send({ msg: "Error occured" });
         }
         // returing the response with file path and name
-        return res.send({name: myFile.name, path: `${__dirname}/public/${myFile.name}`});
+        return res.send({name: myFile.name, 
+          path: `http://localhost:4000/public/${myFile.name}`});
     });
 })
 
@@ -287,5 +280,11 @@ app.post('/updateuser', (req,res)=>{
     
   })
 })
+
+
+// __dirname will use the current path from where you run this file 
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '/public')));
+
 
 module.exports = app;
