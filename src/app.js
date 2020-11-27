@@ -144,7 +144,7 @@ app.post('/upload', (req, res) => {
         }
         // returing the response with file path and name
         return res.send({name: myFile.name, 
-          path: `http://localhost:4000/public/${myFile.name}`});
+          path: `http://exp.rem.coach:${process.env.PORT}/public/${myFile.name}`});
     });
 })
 
